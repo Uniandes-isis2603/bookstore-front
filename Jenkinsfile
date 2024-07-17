@@ -40,7 +40,7 @@ pipeline {
                    sh '''
                       CYPRESS_INSTALL_BINARY=0 npm install
                       npm i -s
-                      npm i typescript@4.6.2
+                      npm i typescript@5.2.0
                       ng build
                    '''
                 }
