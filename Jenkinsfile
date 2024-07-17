@@ -52,7 +52,7 @@ pipeline {
              script {
                 docker.image('citools-isis2603:latest').inside('-u root') {
                    sh '''
-                      ng test --watch=false --code-coverage true
+                      ng test --watch=false --code-coverage true --browsers=ChromeHeadless
                       npm run sonar
                    '''
                 }
