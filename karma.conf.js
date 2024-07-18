@@ -16,12 +16,17 @@ module.exports = function (config) {
       colors: true,
       logLevel: config.LOG_INFO,
       autoWatch: true,
-      browsers: ['ChromeHeadlessNoSandbox'],
+      browsers: ['FirefoxHeadless'],
       customLaunchers: {
-        ChromeHeadlessNoSandbox: {
-          base: 'ChromeHeadless',
-          flags: ['--no-sandbox']
-        }
+            'FirefoxHeadless': {
+                base: 'Firefox',
+                flags: [
+                    '-headless',
+                ],
+                prefs: {
+                    'network.proxy.type': 0
+                }
+            }
       },
       captureTimeout: 180000,
       singleRun: true
