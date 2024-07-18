@@ -48,9 +48,8 @@ pipeline {
       stage('Test') {
           steps {
              script {
-                docker.image('nodetools-isis2603:latest').inside('-u root') {
+                docker.image('nodetools-isis2603:latest').inside('-u pptruser') {
                    sh '''
-                      npm i -D puppeteer karma-chrome-launcher
                       ng test --watch=false --browsers=ChromeHeadless
                       npm run sonar
                    '''
