@@ -23,6 +23,7 @@ module.exports = function (config) {
           flags: ['--no-sandbox']
         }
       },
+      captureTimeout: 180000,
       singleRun: true
     });
 };
