@@ -39,6 +39,7 @@ pipeline {
                       CYPRESS_INSTALL_BINARY=0 npm install
                       npm i -s
                       npm i typescript@5.4.2
+                      npm i @angular/cli
                       ng build
                    '''
                 }
