@@ -48,7 +48,7 @@ pipeline {
       stage('Test') {
           steps {
              script {
-                docker.image('nodetools-isis2603:latest').inside('-u pptruser') {
+                docker.image('nodetools-isis2603:latest').inside('-u root') {
                    sh '''
                       ng test --watch=false --browsers=ChromeHeadless
                       npm run sonar
