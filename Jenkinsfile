@@ -51,6 +51,7 @@ pipeline {
              script {
                 docker.image('nodetools-isis2603:latest').inside('-u root') {
                    sh '''
+                      npm i -g @angular/cli
                       ng test --watch=false --browsers=ChromeHeadless
                       npm run sonar
                    '''
