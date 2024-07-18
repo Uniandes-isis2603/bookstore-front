@@ -9,8 +9,6 @@ pipeline {
        stage('Checkout') {
           steps {
              scmSkip(deleteBuild: true, skipPattern:'.*\\[ci-skip\\].*')
-
-
              git branch: 'master',
                 credentialsId: env.GIT_CREDENTIAL_ID,
                 url: 'https://github.com/Uniandes-isis2603/' + env.GIT_REPO
@@ -36,7 +34,7 @@ pipeline {
           // Build app
           steps {
              script {
-                docker.image('citools-isis2603:latest').inside('-u root') {
+                docker.image('nodetools-isis2603:latest').inside('-u root') {
                    sh '''
                       CYPRESS_INSTALL_BINARY=0 npm install
                       npm i -s
@@ -50,7 +48,7 @@ pipeline {
       stage('Test') {
           steps {
              script {
-                docker.image('citools-isis2603:latest').inside('-u root') {
+                docker.image('nodetools-isis2603:latest').inside('-u root') {
                    sh '''
                       ng test --watch=false --code-coverage true --browsers=ChromeHeadless  --source-map=false
                       npm run sonar
