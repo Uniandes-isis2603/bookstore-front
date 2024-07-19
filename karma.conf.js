@@ -5,7 +5,7 @@ module.exports = function (config) {
     plugins: [
       require("karma-jasmine"),
       require("karma-mocha-reporter"),
-      require("karma-chrome-launcher"),
+      require("karma-firefox-launcher"),
       require("karma-jasmine-html-reporter"),
       require("karma-coverage-istanbul-reporter"),
       require("karma-sonarqube-unit-reporter"),
@@ -32,19 +32,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ["ChromeHeadless"],
+    browsers: ["FirefoxHeadless"],
     singleRun: true,
     restartOnFileChange: true,
-    customLaunchers: {
-      ChromeHeadless: {
-        base: 'Chrome',
-        flags: [
-          '--no-sandbox',
-          '--disable-gpu',
-          '--headless',
-          '--remote-debugging-port=9222'
-        ]
-      }
-    },
   });
 };
