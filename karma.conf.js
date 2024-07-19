@@ -5,7 +5,7 @@ module.exports = function (config) {
     plugins: [
       require("karma-jasmine"),
       require("karma-mocha-reporter"),
-      require("karma-firefox-launcher"),
+      require("karma-chrome-launcher"),
       require("karma-jasmine-html-reporter"),
       require("karma-coverage-istanbul-reporter"),
       require("karma-sonarqube-unit-reporter"),
@@ -32,10 +32,10 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ["FirefoxHeadless"],
+    browsers: ["ChromeHeadless"],
     customLaunchers: {
-      FirefoxHeadless: {
-        base: 'Firefox',
+      ChromeHeadless: {
+        base: 'Chrome',
         flags: [
           '-headless',
         ]
