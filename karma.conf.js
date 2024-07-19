@@ -32,14 +32,19 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ["Chrome_without_security"],
+    browsers: ["ChromeHeadless"],
     singleRun: true,
     restartOnFileChange: true,
     customLaunchers: {
-      Chrome_without_security: {
-        base: "ChromeHeadless",
-        flags: ['--disable-web-security', '--disable-site-isolation-trials']
-      },
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: [
+          '--no-sandbox',
+          '--disable-gpu',
+          '--headless',
+          '--remote-debugging-port=9222'
+        ]
+      }
     },
   });
 };
