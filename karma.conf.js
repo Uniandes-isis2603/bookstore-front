@@ -15,15 +15,7 @@ module.exports = function (config) {
       colors: true,
       logLevel: config.LOG_INFO,
       autoWatch: true,
-      browsers: ['FirefoxHeadless'],
-      customLaunchers: {
-            'FirefoxHeadless': {
-                base: 'Firefox',
-                flags: [
-                    '-headless',
-                ]
-            }
-      },
+      browsers: [],
       captureTimeout: 180000,
       singleRun: true
     });
