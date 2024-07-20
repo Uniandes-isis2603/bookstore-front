@@ -49,6 +49,7 @@ pipeline {
              script {
                 docker.image('nodetools-isis2603:latest').inside('-u root') {
                    sh '''
+                      java -version
                       npm run test
                       ./node_modules/sonarqube-scanner/bin/sonar-scanner
                    '''
