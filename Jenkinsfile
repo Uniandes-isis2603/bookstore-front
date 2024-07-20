@@ -52,7 +52,7 @@ pipeline {
                 docker.image('nodetools-isis2603:latest').inside('-u root') {
                    sh '''
                       npm i -g @angular/cli
-                      ng test --watch=false --puppeter
+                      npm run test --puppeter
                       npm run sonar
                    '''
                 }
