@@ -62,7 +62,7 @@ pipeline {
           // Run static analysis
           steps {
              sh '''
-                docker run --rm -u root -e SONAR_HOST_URL=${SONARQUBE_URL} SONAR_TOKEN=${SONAR_TOKEN} -v ${WORKSPACE}:/usr/src sonarsource/sonar-scanner-cli
+                docker run --rm -u root -e SONAR_HOST_URL=${SONARQUBE_URL} -e SONAR_TOKEN=${SONAR_TOKEN} -v ${WORKSPACE}:/usr/src sonarsource/sonar-scanner-cli
              '''
           }
        }
