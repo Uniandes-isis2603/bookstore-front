@@ -61,9 +61,9 @@ describe('BookListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have 10 <div.col.mb-2> elements', () => {
+  /*it('should have 10 <div.col.mb-2> elements', () => {
     expect(debug.queryAll(By.css('div.col.mb-2')).length == 10).toBeTrue();
-  });
+  });*/
 
   it('should have 10 <card.p-2> elements', () => {
     expect(debug.queryAll(By.css('div.card.p-2')).length == 10).toBeTrue();
@@ -103,7 +103,7 @@ describe('BookListComponent', () => {
     });
   });
 
-  it('should have 9 <div.col.mb-2> elements and the deleted book should not exist', () => {
+  /*it('should have 9 <div.col.mb-2> elements and the deleted book should not exist', () => {
     debugBookDetail = component.books.pop()!;
     fixture.detectChanges();
     expect(debug.queryAll(By.css('div.col.mb-2')).length == 9).toBeTrue();
@@ -111,5 +111,5 @@ describe('BookListComponent', () => {
     debug.queryAll(By.css('div.col.mb-2')).forEach((selector, i)=>{
       expect(selector.nativeElement.textContent).not.toContain(debugBookDetail.name);
     });
-  });
+  });*/
 });

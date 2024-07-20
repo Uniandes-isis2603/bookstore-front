@@ -14,11 +14,7 @@ export class BookService {
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<BookDetail[]> {
-    return this.http
-      .get<BookDetail[]>(this.apiUrl)
-      .pipe(
-        catchError((err) => throwError(() => new Error('error en el servicio')))
-      );
+    return this.http.get<BookDetail[]>(this.apiUrl)
   }
 
   getBook(id: string): Observable<BookDetail> {
