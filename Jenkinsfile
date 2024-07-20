@@ -4,6 +4,7 @@ pipeline {
        GIT_REPO = 'bookstore-front-new'
        GIT_CREDENTIAL_ID = '7c21addc-0cbf-4f2e-9bd8-eced479c56c6'
        SONARQUBE_URL = 'http://172.24.100.52:8082/sonar-isis2603'
+       SONAR_TOKEN = credentials('sonar-login')
     }
     stages {
        stage('Checkout') {
@@ -61,7 +62,7 @@ pipeline {
           // Run static analysis
           steps {
              sh '''
-                docker run --rm -u root -e SONAR_HOST_URL=${SONARQUBE_URL} -v ${WORKSPACE}:/usr/src sonarsource/sonar-scanner-cli
+                docker run --rm -u root -e SONAR_HOST_URL=${SONARQUBE_URL} SONAR_TOKEN=${SONAR_TOKEN} -v ${WORKSPACE}:/usr/src sonarsource/sonar-scanner-cli
              '''
           }
        }
