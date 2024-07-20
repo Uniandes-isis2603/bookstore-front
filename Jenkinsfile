@@ -38,8 +38,6 @@ pipeline {
                    sh '''
                       CYPRESS_INSTALL_BINARY=0 npm install
                       npm i -s
-                      npm i typescript@5.4.2
-                      npm i -g @angular/cli
                       ng build
                    '''
                 }
@@ -51,7 +49,6 @@ pipeline {
              script {
                 docker.image('nodetools-isis2603:latest').inside('-u root') {
                    sh '''
-                      npm i -g @angular/cli
                       npm run test
                       npm run sonar
                    '''
