@@ -18,7 +18,7 @@ export class BookListComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   getBooks(): void {
-    this.bookService.getBooks().subscribe({next: apiData => this.books = apiData , error: e => console.error(e)});
+    this.bookService.getBooks().subscribe({next: apiData => this.books = apiData });
   }
 
   onSelected(book: BookDetail): void {
