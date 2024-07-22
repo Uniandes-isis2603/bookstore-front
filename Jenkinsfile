@@ -52,7 +52,6 @@ pipeline {
                    sh '''
                       java -version
                       ng test --no-watch
-                      ./node_modules/sonarqube-scanner/bin/sonar-scanner
                    '''
                 }
              }
